@@ -64,3 +64,11 @@ group by d.id
 where T1.Department = T2.Department
 order by T1.Department;
 
+
+select  A.referral_date, R.id, R.first_name, R.last_name, S.id, S.first_name, S.last_name, P.id,P.nhi, P.first_name, P.last_name, D.id, D.dept_name
+from Appointment A
+inner join ReferralPerson R on A.refper_id = R.id
+inner join Surgeon S on A.surgeon_id = S.id
+inner join Patient P on A.patient_id = P.id
+inner join Department D on D.id = S.dept_id
+Order by p.id; 
